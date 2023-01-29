@@ -100,13 +100,6 @@ async function connectToWhatsApp() {
 
                 //tentukan jenis pesan berbentuk text                
                 const pesan = messages[0].message.conversation;
-                //tentukan jenis pesan apakah bentuk list
-                const responseList = messages[0].message.listResponseMessage;
-                //tentukan jenis pesan apakah bentuk button
-                const responseButton = messages[0].message.buttonsResponseMessage;
-                
-                //tentukan jenis pesan apakah bentuk templateButtonReplyMessage
-                const responseReplyButton = messages[0].message.templateButtonReplyMessage;
                 
                 //nowa dari pengirim pesan sebagai id
                 const noWa = messages[0].key.remoteJid;
@@ -116,10 +109,10 @@ async function connectToWhatsApp() {
                 const pesanMasuk = pesan.toLowerCase();
 
                 if(!messages[0].key.fromMe && pesanMasuk === "leveling"){
-                    await sock.sendMessage(noWa, {text: "silahkan masukan level anda"},{quoted: messages[0] });
+                   console.log(noWa,"silahkan masukan level anda" );
+
                 }
-               
-                   
+             
                     }
                    
         }
